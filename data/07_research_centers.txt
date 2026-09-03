@@ -1,0 +1,4 @@
+Source: Howard University CEA — EECS Research Centers and Labs
+URL: https://cea.howard.edu/academics/departments/electrical-engineering-and-computer-science/research/research-centers-and
+
+Howard EECS research centers include the Data Science and Cybersecurity Center (DSC2), directed by Dr. Danda B. Rawat. DSC2 focuses on cybersecurity, cyber-event forecasting, cyber-actor behavior, threat intelligence, threat modeling and analysis, cyber resiliency and defense, and data science. Other listed research groups work across embedded and real-time systems, communications, databases, software design, user interfaces, human-computer interaction, distributed systems engineering, software testing, and requirements engineering.
