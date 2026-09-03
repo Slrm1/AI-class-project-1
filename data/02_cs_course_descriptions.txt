@@ -1,0 +1,16 @@
+Source: Howard University College of Engineering and Architecture — CS Course Descriptions
+URL: https://cea.howard.edu/index.php/cs-course-descriptions
+
+Selected course information:
+CSCI-100 Introduction to Computer Science: fundamentals of systems and computer science, computational thinking, hands-on computing and group exercises, algorithms, problem solving, department research agenda, tracks, and careers.
+CSCI-135 Computer Science I: programming fundamentals, C++, algorithms, problem analysis, software design, testing/debugging, and maintainable programs.
+CSCI-136 Computer Science II: software development life cycle, object-oriented programming, classes and objects, reusable abstract data types, software reuse, and algorithm complexity.
+CSCI-201 Computer Organization I: data representation, computer arithmetic, Boolean algebra, digital logic, and MIPS assembly programming.
+CSCI-211 Unix Lab: Linux/Unix commands, directories, file systems, permissions, processes, networking basics, file management, and shell scripting.
+CSCI-263 Web Makers: HTML, CSS, JavaScript, web servers, and hands-on web creation.
+CSCI-354 Computer Science III: advanced data structures, algorithm design, efficiency, trees, graphs, indexing, and search.
+CSCI-363 Large Scale Programming: large-scale applications and systems, UML, object-oriented design/analysis, realistic Java applications, and project management.
+CSCI-375 Software Engineering: software specification, design, implementation, testing, verification, documentation, and software development life cycle.
+CSCI-401 Operating Systems: processes, synchronization, virtual memory, system calls, interrupts, device and memory management, scheduling, and deadlocks.
+CSCI-421 Computer and Video Game Development: game infrastructure, design, engines, motion, software development, and guest speakers from the game industry.
+CSCI-470 Fundamentals of Algorithms: efficient algorithm design, complexity analysis, application settings, and recognizing hard problems.
