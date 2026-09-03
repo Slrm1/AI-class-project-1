@@ -1,0 +1,4 @@
+Source: Howard University CEA — EECS Research Areas
+URL: https://cea.howard.edu/academics/departments/electrical-engineering-and-computer-science/research-areas-eecs
+
+Howard EECS research areas include artificial intelligence and machine learning, algorithms and complexity theory, bioinformatics and computational biology, computer architecture and organization, cybersecurity and wireless networking, database/data visualization/analysis, data communications and networking, distributed and parallel computation and operating systems, human-computer interaction, mobile computing, multimedia/visualization/gaming/WWW applications, performance modeling and simulation, software engineering and environments, and systems engineering.
