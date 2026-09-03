@@ -1,0 +1,4 @@
+Source: Howard University Programs — Computer Science Undergraduate
+URL: https://programs.howard.edu/computer-science-0
+
+The Howard University Bachelor of Science in Computer Science requires a minimum of 120 credit hours. Required areas include Computer Science, Computer Programming, Mathematics, Science, and Liberal Arts. Electives include areas such as Data Science, Machine Learning, Cybersecurity, Mobile App Development, Game Development, Humanities/Social Sciences, and African-American Studies. Howard states that the program is accredited by the Computing Accreditation Commission of ABET. The university notes that its computer science courses use the CSCI prefix.
