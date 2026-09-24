@@ -1,0 +1,13 @@
+Source: r/HowardUniversity — Q&A by a rising sophomore computer science major (coursework portion)
+URL: https://www.reddit.com/r/HowardUniversity/comments/u7bhv8/q_a/
+Type: reddit
+
+Question from its_just_vibe: What programming languages and projects do students generally work on in the first year? How demanding are the classes, and how often do students get free time? Are textbooks necessary?
+
+Student reply from JacSLB on languages and projects: The first-year classes are mostly intro classes. The first semester was labs that dealt with Python, such as building a search engine or making a dictionary. The next semester is C++, with smaller labs on how to implement the code, such as making a calculator or calculating the mph of a runner. The first semester was taught by someone who worked at Google and was teaching at Howard for a semester.
+
+Student reply from JacSLB on workload: The first semester did not leave a bunch of free time because the workload was demanding. JacSLB took 16 credits. A lot of that load was the ALEKS program used by the math class and the chemistry class. You cannot complete the ALEKS assignment unless you get four in a row correct, and that piled up after a cyber attack made the campus lose a week of the semester. The next semester, at 15 credits, there was plenty of time once studying and homework were scheduled. Some people party every weekend and still finish homework. The classes can be demanding, but a set schedule makes free time possible.
+
+Student reply from JacSLB on textbooks: Most of the time, textbooks are not necessary. Most people buy textbooks off each other or use free PDFs online. Some professors provide the textbook directly. It depends on the class. Professors are supposed to teach you from scratch, but not all do. Tutoring is offered on campus, and a lot of it was free that year. Brushing up on chemistry, math, and coding in Python and/or C++ helps before the first year.
+
+Student reply from JacSLB on keeping a 3.5 GPA: It is pretty hard, at least it was for JacSLB. A few other computer science friends struggled as well. JacSLB thinks the requirement discussed that year was a 3.5 GPA per year, so you have two semesters to get a 3.5. With better professors and a better work ethic in the first semester, JacSLB thinks the GPA would have been better.

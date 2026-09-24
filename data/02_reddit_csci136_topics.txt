@@ -1,0 +1,11 @@
+Source: r/HowardUniversity — CSCI-136 Syllabus?
+URL: https://www.reddit.com/r/HowardUniversity/comments/kpqcf5/csci136_syllabus/
+Type: reddit
+
+Thread question from YungstirJoey666: What topics does CSCI-136 (Computer Science II) cover? Is there a syllabus?
+
+Student reply: I took the class last semester as a computer science major. Depending on the professor and what section you registered for, CSCI-136 will be taught in either C++ or Python. It covers data structures and algorithms, such as but not limited to: using classes (object-oriented programming); linked lists (and vectors if you are in the C++ class); sorting algorithms; dictionaries and hash tables; trees, binary trees, and tree-traversal methods; and a huge emphasis on Big-O notation, runtime complexity, and space complexity.
+
+Follow-up from YungstirJoey666: Much of what was listed is what we already covered in Computer Science 1 (CSCI-135). I was wondering if CSCI-136 would be any different, unless CSCI-136 is an expansion of CSCI-135.
+
+Follow-up reply: In that case, I doubt it will be any different. You will probably have the same syllabus as CS-III.

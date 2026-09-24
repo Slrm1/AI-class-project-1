@@ -1,0 +1,13 @@
+Source: r/HowardUniversity — How is Howard University for Computer Science?
+URL: https://www.reddit.com/r/HowardUniversity/comments/1cdwjwn/how_is_howard_university_for_computer_science/
+Type: reddit
+
+Thread question: a prospective student asks whether Howard computer science professors provide support, whether the school is collaborative, and whether internship opportunities exist if you look for them.
+
+Student reply from Sure_Air4442: The school is collaborative with a very small number of students in classes. It has great career opportunities especially because you are in DC, and the Howard alumni network is strong. Some of the professors are bad, but students work in groups together in order to excel, and there are good graduate opportunities as well.
+
+Student reply from JacSLB: Mixed emotions. There are professors who cannot teach, looking at all of the Computer Organization professors, but the network there is great. You get a lot of tech companies showing up on campus for recruiting and other opportunities. JacSLB's intro to CS class was taught by someone from Google. JacSLB went the C++ route instead of Python and enjoyed those professors, specifically Professor Blackstone. There is also a large alumni network in the area that is willing to help.
+
+Same thread, JacSLB on coming in without knowing how to code: JacSLB knew a little JavaScript from Code.org and otherwise did not know how to code. JacSLB chose the C++ route because it broke everything down in a way that Python did not, which made Python harder to comprehend. JacSLB struggled with coding and was slow to understand, but Professor Blackstone specifically helped and rooted for JacSLB to pass the class, especially as a working student. The intro classes are made to be hard to wean people out (JacSLB heard a few professors say that), but most professors will try to help if they know you are trying.
+
+Same thread, JacSLB on what to study first: Intro to CS is taught in Python. Tutoring is offered. JacSLB is not speaking from personal experience about disability accommodations, but a roommate who needed accommodations for seizures waited almost a whole school year to get them.

@@ -1,0 +1,11 @@
+Source: r/HowardUniversity — Q&A by a rising sophomore computer science major (internship portion)
+URL: https://www.reddit.com/r/HowardUniversity/comments/u7bhv8/q_a/
+Type: reddit
+
+Question from its_just_vibe: How are the internship opportunities at Howard for CS majors? Do graduates actually get hired by big tech companies?
+
+Student reply from JacSLB: The internships are fairly good. A lot of the main ones are for chemical engineering and similar majors, but there are still internships for computer science and you have to look. A notable one that everyone applies for is the Google STEP internship, which is for freshmen specifically. Google STEP can help with securing the Google internship you can apply for after freshman year. If you do not get into Google STEP, that does not mean you cannot get the Google internship sophomore year. You just have less of an advantage. JacSLB has heard of other people getting internships at NASA and The New York Times. There are plenty. You just have to look.
+
+Same reply, on whether the program prepares you and whether people get hired: JacSLB did not focus on internships that year, but knows others who secured a summer internship as freshmen. CEA, the College of Engineering and Architecture, hosts job fairs on campus and on Handshake. CEA also hosts sessions on resumes and applying for jobs. CEA organizations such as SWE, the Society of Women in Engineering, can send your resume to partnered companies. Many students do get opportunities, including the perk of Google as a partner, but being hired is based on your skill and your own ambition. Read the emails and ask around.
+
+Related comment from the thread "Should I commit to Howard?" (https://www.reddit.com/r/HowardUniversity/comments/tlwlya/should_i_commit_to_howard/): JacSLB says there are good internships for CS such as Google STEP, which Howard is partnered with. There are more, but the Google one is a big one for most people. Megasonic150 says there are a lot of CS internship opportunities, and that Cook Hall is okay but a little small.

@@ -1,0 +1,11 @@
+Source: r/HowardUniversity — Registering for CS Courses
+URL: https://www.reddit.com/r/HowardUniversity/comments/1dfhalm/registering_for_cs_courses/
+Type: reddit
+
+Thread question from SoftwareNo4088: A new student just got a Howard email and needs to register for courses. The academic plan section shows some first-semester computer science courses. What do you do from there?
+
+Student reply from Downtown_Ad5455: If you see an orange button that says register from plan, press that. If you do not see that button, it means you have not finished all of your onboarding tasks in BisonHub, and they will not let you register for classes until you do that.
+
+Follow-up: Submitting health documentation is a task you have to do before you can register for any class.
+
+Follow-up from Downtown_Ad5455: Some onboarding items do not open until the 15th, so some people check them off as done in order to move on and get the class times they want. You can also wait the extra two days.

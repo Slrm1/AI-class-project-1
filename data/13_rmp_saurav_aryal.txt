@@ -1,0 +1,15 @@
+Source: Rate My Professors — Saurav Aryal, Computer Science, Howard University
+URL: https://www.ratemyprofessors.com/professor/2672438
+Type: rmp
+
+Professor Saurav Aryal, Computer Science, Howard University. Overall quality 3.8 out of 5 based on 8 ratings. 63 percent would take again. Level of difficulty 2.9.
+
+Review of Professor Saurav Aryal, course CSCI 354, April 26, 2023. Quality 5.0. Difficulty 2.0. For credit, attendance not mandatory, would take again, grade A+, textbook N/A. Very clear expectations from the beginning. He is very understanding and seems like a real person who understands human errors. He is very casual and easy to understand and ask questions. Tags: extra credit, group projects, clear grading criteria.
+
+Review of Professor Saurav Aryal, course CSCI 135, October 31, 2022. Quality 5.0. Difficulty 1.0. For credit, attendance mandatory, would take again, grade A, textbook N/A. Very clear about the expectations for the semester. Complete the labs, which are basically LeetCode-type questions, and you will get an A. There is a personal project for extra credit and a Karat interview for another extra credit. He is really knowledgeable and is always ready to help you in anything related to CS. Tags: extra credit, amazing lectures, clear grading criteria.
+
+Review of Professor Saurav Aryal, course CSCI 135, October 31, 2022. Quality 5.0. Difficulty 1.0. For credit, attendance mandatory, would take again, grade A, textbook N/A, online class. Very caring professor. Lots of extra credit opportunity. He also gives lots of problems similar to those asked in programming interviews. His teaching has a mixture of both the theoretical and practical aspects of computer science. Tags: participation matters, group projects, caring.
+
+Review of Professor Saurav Aryal, course CSCI 136, July 26, 2022. Quality 5.0. Difficulty 3.0. For credit, attendance not mandatory, would take again, grade C+, textbook N/A, online class. He has first-hand experience with the courses at the university, so he will be very fair and patient with you as long as you are the same with him. Put in the effort and be willing to cooperate with your classmates, and you will get at least a C+. Tags: participation matters, extra credit, gives good feedback.
+
+Review of Professor Saurav Aryal, course CSCI 135, March 17, 2022. Quality 2.0. Difficulty 4.0. For credit, attendance not mandatory, textbook N/A, online class. If you like sitting at your computer for hours trying to debug code and pass test cases that were horribly made by Dr. Aryal and his TAs, after trying to decipher the poorly written instructions for the assignment, this review would recommend the class. Otherwise, stay as far away as possible.

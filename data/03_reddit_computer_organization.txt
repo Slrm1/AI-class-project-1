@@ -1,0 +1,7 @@
+Source: r/HowardUniversity — Computer Science Majors: How hard is it?
+URL: https://www.reddit.com/r/HowardUniversity/comments/ll492a/computer_science_majors_how_hard_is_it/
+Type: reddit
+
+Thread question from Megasonic150: Computer science majors, how are you finding the major at Howard right now?
+
+Student reply: It depends on what you define as hard. When I took my first CS class at Howard, I did not know how to code at all. My first semester was difficult, but my second semester was much easier. Computer Organization I and Computer Organization II are very difficult. The workload in both classes is tremendous, and learning how to code in any assembly language (we used MIPS) is ten times harder than coding in a high-level language such as C++, Python, or Java.

@@ -1,88 +1,70 @@
 # Evaluation Results
 
-Run this file after building the index and querying the application. Replace every placeholder with the actual observed output.
+Retrieval was run against the index of 78 chunks. Generation was not run: `GROQ_API_KEY` is not set in this environment. Do not fill the response column with a guessed answer. After the key is in `.env`, run `python evaluate.py` and paste the model output here and in `README.md`.
+
+The questions match `planning.md`. The full write-up, including distances and the failure case, is in `README.md`.
 
 ## Test Questions
 
-### 1. BSCS credit hours
-**Question:** What credit-hour requirement does Howard's BS in Computer Science have?
+### 1. CSCI-136
+**Question:** What do students say CSCI-136 covers, and which programming languages might the class use?
 
-**Expected:** At least 120 credit hours.
+**Expected:** C++ or Python depending on section. Topics include classes and OOP, linked lists (vectors in C++), sorting, dictionaries and hash tables, trees and traversal, and Big-O / runtime / space complexity.
 
-**Actual response:** _Paste your response here._
+**Retrieval:** Top chunk distance 0.200 from `02_reddit_csci136_topics.txt`. It contains that topic list.
 
-**Correct?** _Yes/No — explain briefly._
+**Actual response:** _Not run. Set GROQ_API_KEY and run `python evaluate.py`._
 
-**Retrieved sources/distances:** _Paste the relevant source files and distances._
+### 2. Computer Organization
+**Question:** What do students say about the difficulty of Computer Organization at Howard?
 
-### 2. CSCI 354
-**Question:** What topics are covered in CSCI 354?
+**Expected:** Organization I and II are very difficult, the workload is tremendous, and MIPS is much harder than C++, Python, or Java. A separate comment says the Computer Organization professors cannot teach.
 
-**Expected:** The answer should match the CSCI 354 source document.
+**Retrieval:** The MIPS reply is first, distance 0.390, `03_reddit_computer_organization.txt`. The “cannot teach” comment was not in the top 4.
 
-**Actual response:** _Paste your response here._
+**Actual response:** _Not run._
 
-**Correct?** _Yes/No — explain briefly._
+### 3. BisonHub registration
+**Question:** How do students say a new student actually registers for classes in BisonHub?
 
-**Retrieved sources/distances:** _Paste the relevant source files and distances._
+**Expected:** Press the orange “register from plan” button. If it is missing, onboarding tasks are unfinished. Do not wait for an advisor to email first.
 
-### 3. Advising
-**Question:** Who are the Computer Science academic advisors listed for A-K and L-Z?
+**Retrieval:** Button instructions are first, distance 0.331, `04_reddit_bisonhub_registration.txt`. The “do not wait” sentence was not in the top 4.
 
-**Expected:** The answer should match the advising source document.
+**Actual response:** _Not run._
 
-**Actual response:** _Paste your response here._
+### 4. Blackstone CSCI 135
+**Question:** What do Rate My Professors reviews say about Jeremy Blackstone's CSCI 135 class specifically?
 
-**Correct?** _Yes/No — explain briefly._
+**Expected:** Assignments are posted at the start, they are not numerous or hard, students can work at their own pace, and exams follow the homework. The harsh review on that page is about CSCI 454.
 
-**Retrieved sources/distances:** _Paste the relevant source files and distances._
+**Retrieval:** Failure. The March 26, 2026 review with the exam policy is rank 8 (distance 0.390). The top hit is the CSCI 454 complaint (distance 0.261).
 
-### 4. Internship resources
-**Question:** What internship resources are available through Howard's undergraduate resources?
+**Actual response:** _Not run. A grounded model cannot state the exam policy from the top 4 chunks, because that sentence is not in them._
 
-**Expected:** The answer should match the internship source document.
+### 5. Most useful feedback
+**Question:** Which Howard CS professor do the documents say gives the most useful feedback?
 
-**Actual response:** _Paste your response here._
+**Expected:** No single winner. Hazzazi (CSCI 354) and Aryal (CSCI 136) reviews are tagged “gives good feedback.”
 
-**Correct?** _Yes/No — explain briefly._
+**Retrieval:** Those reviews are not in the top 8. Top hit is a Blackstone “best professor” review at distance 0.388.
 
-**Retrieved sources/distances:** _Paste the relevant source files and distances._
-
-### 5. Research areas
-**Question:** What are some research areas in Howard EECS?
-
-**Expected:** The answer should list areas supported by the research documents.
-
-**Actual response:** _Paste your response here._
-
-**Correct?** _Yes/No — explain briefly._
-
-**Retrieved sources/distances:** _Paste the relevant source files and distances._
+**Actual response:** _Not run._
 
 ## Out-of-Scope Test
 
 **Question:** What is the weather in Washington, DC tomorrow?
 
-**Expected:** A refusal stating that the Howard CS knowledge base does not contain the information.
+**Actual response:** I don't have enough information in the collected Howard CS student documents to answer that.
 
-**Actual response:** _Paste your response here._
-
-**Passed refusal test?** _Yes/No._
+**Passed refusal test?** Yes. Best distance 0.819, above the 0.65 gate. Groq is not called.
 
 ## Failure Analysis
 
-**Observed failure:** _Describe one real failure or limitation from the tests above._
+**Observed failure:** The Blackstone CSCI 135 exam-policy review is stored as its own chunk and still loses the top 4 to shorter CSCI 135 praise and to a CSCI 454 complaint.
 
-**Cause:** _Retrieval / chunking / source coverage / generation / other._
+**Cause:** Retrieval, specifically `all-MiniLM-L6-v2` cosine ranking at k=4.
 
-**Why it happened:** _Explain briefly using the retrieved chunks and distances._
+**Why it happened:** The useful review is longer. Extra sentences about C++ and homework move it to distance 0.390. “The goat” and the CSCI 454 review sit at 0.261–0.306 because they are dominated by the professor’s name. See `README.md`.
 
-**Possible improvement:** _For example, hybrid search, reranking, better chunking, more source documents, or metadata filters._
-
-## Final Evaluation Summary
-
-**Correct answers:** ___/5_
-
-**Out-of-scope refusal:** _Passed/Failed_
-
-**Overall assessment:** _Summarize the system's strengths and limitations in 2–4 sentences._
+**Possible improvement:** A reranker, or a keyword boost when the query names a course number, so CSCI 454 cannot outrank a chunk that literally says CSCI 135 and “exams.”
