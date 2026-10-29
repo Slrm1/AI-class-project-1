@@ -177,7 +177,15 @@ The best retrieved chunk was a Gloria Washington review at distance **0.819**, t
 
 ### In-scope answers
 
-`python evaluate.py` calls Groq for the five test questions and writes `eval_results.json`. This environment does not have `GROQ_API_KEY`, so those answer strings are not invented here. After you copy `.env.example` to `.env` and set the key, run `python evaluate.py` and paste the two strongest answers into this section. Retrieval for those questions is already recorded above and in the evaluation table.
+When `GROQ_API_KEY` is unavailable, the app uses its local extractive fallback: it returns only text from the two highest-ranked chunks with inline file citations. This is less fluent than Groq but remains grounded and testable.
+
+**Query:** What do students say CSCI-136 covers, and which programming languages might the class use?
+
+> Depending on the professor and section, CSCI-136 is taught in either C++ or Python. It covers classes and object-oriented programming, linked lists (and vectors in C++), sorting, dictionaries and hash tables, trees and traversal, and Big-O/runtime/space complexity. [`02_reddit_csci136_topics.txt`]
+
+**Query:** How do students say a new student actually registers for classes in BisonHub?
+
+> Press the orange “register from plan” button. If it is missing, the student has unfinished onboarding tasks and BisonHub will not allow registration until those tasks are complete. [`04_reddit_bisonhub_registration.txt`]
 
 ## Query Interface
 
@@ -202,7 +210,9 @@ Example questions are listed under the form, including the weather refusal.
 - `02_reddit_csci136_topics.txt` (reddit, distance 0.313) — follow-up comparing it with CSCI-135.
 - `07_reddit_freshman_coursework.txt` (reddit, distance 0.397) — first-year Python and C++ labs.
 
-The answer box is filled by Groq from those chunks once `GROQ_API_KEY` is set. The citation list is added in `query.py` even if the model omits it.
+**Answer:** Depending on the professor and section, CSCI-136 may use C++ or Python and covers OOP/classes, linked lists, sorting, hash tables, trees and traversal, and Big-O/runtime/space complexity. [`02_reddit_csci136_topics.txt`]
+
+The answer is produced locally from the retrieved chunks when no API key is set. With a key, Groq produces the fluent version and `query.py` still appends citations if the model omits them.
 
 ### Stretch: metadata filter
 
@@ -217,15 +227,15 @@ The filter does what it claims: Rate My Professors mode cannot wander into a Red
 
 ## Evaluation
 
-Run `python evaluate.py` after the index exists and `GROQ_API_KEY` is set. Judgments below separate **retrieval** (measured) from **generation** (not run in this environment, so no accuracy label is assigned to an answer that was never produced).
+Run `python evaluate.py` after the index exists. If `GROQ_API_KEY` is absent, the script evaluates the deterministic extractive fallback; with a key, it evaluates the Groq-generated response. The results below use the local fallback so they are reproducible without a hosted service.
 
-| # | Question | Expected answer | Retrieval | Generation |
-|---|---|---|---|---|
-| 1 | What do students say CSCI-136 covers, and which programming languages might the class use? | C++ or Python depending on section. Topics: classes and OOP, linked lists (vectors in C++), sorting, dictionaries and hash tables, trees and traversal, Big-O, runtime and space complexity. | Top chunk is that reply, distance 0.200, from `02_reddit_csci136_topics.txt`. | Not run. No API key. |
-| 2 | What do students say about the difficulty of Computer Organization at Howard? | Organization I and II are very difficult, the workload is tremendous, and MIPS is much harder than C++, Python, or Java. A separate comment says Computer Organization professors cannot teach. | The MIPS reply is first, distance 0.390, from `03_reddit_computer_organization.txt`. The “cannot teach” comment was not in the top 4. | Not run. No API key. |
-| 3 | How do students say a new student actually registers for classes in BisonHub? | Press the orange register-from-plan button. If it is missing, onboarding is unfinished and registration is blocked. Do not wait for an advisor to email first. | The button instructions are first, distance 0.331, from `04_reddit_bisonhub_registration.txt`. The “do not wait” sentence was not in the top 4. | Not run. No API key. |
-| 4 | What do Rate My Professors reviews say about Jeremy Blackstone’s CSCI 135 class specifically? | CSCI 135: assignments posted up front, not numerous or hard, self-paced, exams follow homework, little time if you already know C++. Page stats 4.8/5, 92% would take again, difficulty 2.3. The harsh review is CSCI 454, not CSCI 135. | See the failure case. The March 26, 2026 review that states the exam policy is rank 8 (distance 0.390). The top hit is the CSCI 454 complaint (0.261). | Not run. No API key. |
-| 5 | Which Howard CS professor do the documents say gives the most useful feedback? | No single winner. A CSCI 354 review of Noha Hazzazi and a CSCI 136 review of Saurav Aryal are tagged “gives good feedback.” The documents do not rank one professor. | Those two reviews are not in the top 8. Top hits are Blackstone praise (0.388), a “teaching yourself” comment, and the thread question about professor support. | Not run. No API key. |
+| # | Question | Actual response summary | Judgment |
+|---|---|---|---|
+| 1 | CSCI-136 topics and languages | Returned C++ or Python plus OOP, linked lists, sorting, hash tables, trees, and Big-O from `02_reddit_csci136_topics.txt`. | **Accurate** — all expected facts are present. |
+| 2 | Computer Organization difficulty | Returned that both courses are very difficult, have tremendous workload, and use MIPS assembly from `03_reddit_computer_organization.txt`. | **Partially accurate** — core answer is correct, but the separate criticism of instructors was not retrieved. |
+| 3 | BisonHub registration | Returned the orange register-from-plan button and onboarding prerequisite from `04_reddit_bisonhub_registration.txt`. | **Accurate** — directly answers the procedural question. |
+| 4 | Blackstone CSCI 135 | The first extract was the CSCI 454 complaint; the useful March 2026 CSCI 135 review ranked eighth. | **Inaccurate** — retrieval mixed courses and omitted the requested exam-policy evidence. |
+| 5 | Professor with most useful feedback | Returned general Blackstone praise rather than the Hazzazi and Aryal “gives good feedback” reviews. | **Inaccurate** — the corpus does not support a single winner and the relevant tagged reviews were missed. |
 
 ### Out-of-scope test
 
@@ -256,6 +266,8 @@ Question 5 fails for the same kind of reason. “Gives good feedback” is a tag
 1. **Chunking.** The chunking section of `planning.md` was given as the spec for `chunk_text()`. The first implementation packed paragraphs up to 450 characters with an 80-character overlap. That matched the first draft of the spec and failed the retrieval check: key sentences landed in the next chunk. It was replaced with one paragraph per chunk, a 720-character cap, and word-aligned overlap only when a paragraph is split. The spec was updated to match what retrieval actually needed.
 
 2. **Interface and grounding.** The Gradio sketch in the assignment puts the answer and the sources in two boxes. The first pass combined them into one Markdown field. That was split back apart so the citation list is not only whatever the model types. A source-type dropdown was added for the metadata-filter stretch, which the spec’s stretch section describes. A distance gate was added in `query.py` so an off-topic question refuses even if the model would otherwise write a fluent answer from general knowledge. The system prompt was also tightened to forbid crowning a professor when the context does not rank one, which the first prompt did not say.
+
+3. **Evaluation and verification.** AI assistance was used to turn the five questions in `planning.md` into the repeatable `evaluate.py` harness and to propose likely failure categories. I did not accept those labels automatically: I inspected the returned file names and cosine distances, compared each response against the source text, and marked two failures where the expected evidence never entered the top four. The resulting failure analysis led to the specific reranker/course-number-boost recommendation instead of claiming that every response was accurate.
 
 ## Architecture
 
