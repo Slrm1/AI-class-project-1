@@ -1,6 +1,6 @@
 # Evaluation Results
 
-Retrieval was run against the index of 78 chunks. Generation was not run: `GROQ_API_KEY` is not set in this environment. Do not fill the response column with a guessed answer. After the key is in `.env`, run `python evaluate.py` and paste the model output here and in `README.md`.
+Retrieval was run against the index of 78 chunks. Because `GROQ_API_KEY` was not set, responses were produced by the deterministic extractive fallback in `query.py`. That fallback uses only the two highest-ranked chunks, truncates each excerpt to 420 characters, and includes its source filename. These are real pipeline outputs, not guessed model answers.
 
 The questions match `planning.md`. The full write-up, including distances and the failure case, is in `README.md`.
 
@@ -13,7 +13,9 @@ The questions match `planning.md`. The full write-up, including distances and th
 
 **Retrieval:** Top chunk distance 0.200 from `02_reddit_csci136_topics.txt`. It contains that topic list.
 
-**Actual response:** _Not run. Set GROQ_API_KEY and run `python evaluate.py`._
+**Actual response summary:** Returned the student reply stating that the language may be C++ or Python and listing classes/OOP, linked lists, sorting, dictionaries and hash tables, trees, and Big-O/runtime/space complexity. Source: `02_reddit_csci136_topics.txt`.
+
+**Judgment:** Accurate. The response includes every expected topic and both possible languages.
 
 ### 2. Computer Organization
 **Question:** What do students say about the difficulty of Computer Organization at Howard?
@@ -22,7 +24,9 @@ The questions match `planning.md`. The full write-up, including distances and th
 
 **Retrieval:** The MIPS reply is first, distance 0.390, `03_reddit_computer_organization.txt`. The “cannot teach” comment was not in the top 4.
 
-**Actual response:** _Not run._
+**Actual response summary:** Returned that Computer Organization I and II are very difficult, the workload is tremendous, and the courses use MIPS assembly, which the student describes as harder than high-level languages. Source: `03_reddit_computer_organization.txt`.
+
+**Judgment:** Partially accurate. The central difficulty and workload claims are present, but the separate criticism of the instructors was not retrieved.
 
 ### 3. BisonHub registration
 **Question:** How do students say a new student actually registers for classes in BisonHub?
@@ -31,7 +35,9 @@ The questions match `planning.md`. The full write-up, including distances and th
 
 **Retrieval:** Button instructions are first, distance 0.331, `04_reddit_bisonhub_registration.txt`. The “do not wait” sentence was not in the top 4.
 
-**Actual response:** _Not run._
+**Actual response summary:** Returned the instruction to press the orange “register from plan” button and explained that a missing button means onboarding tasks are incomplete. Source: `04_reddit_bisonhub_registration.txt`.
+
+**Judgment:** Accurate. It directly answers the procedural question. The extra advice not to wait for an advisor was not needed to complete the procedure.
 
 ### 4. Blackstone CSCI 135
 **Question:** What do Rate My Professors reviews say about Jeremy Blackstone's CSCI 135 class specifically?
@@ -40,7 +46,9 @@ The questions match `planning.md`. The full write-up, including distances and th
 
 **Retrieval:** Failure. The March 26, 2026 review with the exam policy is rank 8 (distance 0.390). The top hit is the CSCI 454 complaint (distance 0.261).
 
-**Actual response:** _Not run. A grounded model cannot state the exam policy from the top 4 chunks, because that sentence is not in them._
+**Actual response summary:** The first excerpt discussed a negative CSCI 454 experience, while the second offered only brief praise for CSCI 135. It did not return the requested CSCI 135 assignment or exam-policy details.
+
+**Judgment:** Inaccurate. The response mixes courses and cannot state the expected evidence because that review is not in the top four.
 
 ### 5. Most useful feedback
 **Question:** Which Howard CS professor do the documents say gives the most useful feedback?
@@ -49,7 +57,9 @@ The questions match `planning.md`. The full write-up, including distances and th
 
 **Retrieval:** Those reviews are not in the top 8. Top hit is a Blackstone “best professor” review at distance 0.388.
 
-**Actual response:** _Not run._
+**Actual response summary:** Returned general praise for Blackstone and a Reddit comment about faculty support. It did not retrieve the Hazzazi or Aryal reviews tagged “gives good feedback.”
+
+**Judgment:** Inaccurate. The retrieved evidence neither answers the feedback question nor supports naming one winner.
 
 ## Out-of-Scope Test
 
