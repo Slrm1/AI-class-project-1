@@ -85,6 +85,22 @@ def source_names(results) -> list[str]:
     return seen
 
 
+def _extractive_fallback(results) -> str:
+    """Return a grounded local answer when no hosted LLM key is configured.
+
+    The fallback deliberately quotes only the two best retrieved chunks. It is
+    less fluent than Groq, but keeps the interface usable and makes evaluation
+    reproducible without inventing facts or requiring an external service.
+    """
+    excerpts = []
+    for doc, meta, _ in results[:2]:
+        compact = " ".join(doc.split())
+        if len(compact) > 420:
+            compact = compact[:417].rsplit(" ", 1)[0] + "..."
+        excerpts.append(f"{compact} [{meta['source_file']}]")
+    return "\n\n".join(excerpts)
+
+
 def answer(question: str, source_type: str | None = None):
     if not question or not question.strip():
         return {"answer": "Please enter a question.", "sources": [], "results": []}
@@ -94,7 +110,8 @@ def answer(question: str, source_type: str | None = None):
         return {"answer": REFUSAL, "sources": [], "results": results}
 
     if not os.getenv("GROQ_API_KEY"):
-        raise RuntimeError("Set GROQ_API_KEY in .env before asking questions.")
+        text = _extractive_fallback(results)
+        return {"answer": text, "sources": source_names(results), "results": results}
 
     context = _format_context(results)
     client = Groq(api_key=os.environ["GROQ_API_KEY"])
